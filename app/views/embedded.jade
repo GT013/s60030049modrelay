@@ -1,0 +1,33 @@
+html
+    head
+        title Embedded
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(href='css/main.css',rel='stylesheet')
+        script(type='text/javascript', src='/pani.js')
+    body
+        h1(align='center') วัดอุณหภูมิและความชื้น
+        div
+            canvas(id="chart" width="200" height="200")
+        div
+        table#demo(style='width:100%')
+            tbody
+                tr
+                    th วัน/เดือน/ปี
+                    th อุณหภูมิ
+                    th ความชื้น
+                    th เวลา
+                each emb in embedded
+                    tr
+                        td #{emb.day}/ #{emb.month}/ #{emb.year}
+                        td #{emb.temperature} 
+                        td #{emb.humidity}
+                        td #{emb.hour} : #{emb.minute}
+        
+            //h1 วัน #{emb.day} เดือน #{emb.month} ปี #{emb.year}
+            //h1 เวลา #{emb.hour} : #{emb.minute}
+            //h1 อุณหภูมิ #{emb.temperature} 
+            //h1 ความชื้น #{emb.humidity}
+            script(type='text/javascript',src='/js/Chart.js')
+            script(type='text/javascript',src='/js/sh.js')
+    
